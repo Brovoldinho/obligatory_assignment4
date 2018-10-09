@@ -15,7 +15,7 @@ library(xml2)
 Konkurs <- read_html("https://w2.brreg.no/kunngjoring/kombisok.jsp?datoFra=01.01.2018&datoTil=01.10.2018&id_region=100&id_fylke=19&id_kommune=1902&id_niva1=51&id_niva2=-+-+-&id_bransje1=0")
 
 konkurs_liste <- Konkurs %>%
-  html_nodes("table td") %>%
+  html_nodes("p a") %>%
   html_text()
 
 dframe <- tibble(konkurs_liste)
